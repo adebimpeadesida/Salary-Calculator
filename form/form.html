@@ -2,6 +2,8 @@
 <html lang="en-us">
   <head>
     <title> fornt-end</title>
+    <script src="../backend/calculateSalary.js">
+    </script>
   </head>
   <body>
    <tr>
@@ -23,18 +25,23 @@
         <center>
           <br>
         <center>
-          <input type="button" value="Calculate" onClick="Calculate(this.form);">
+          <input type="button" onClick="salaryCalculator()" value="Calculate">
         <tr>
             <td>
-                <input type="text" name="Use-id">
+                <input id="user-id" type="text" name="Use-id">
             </td> 
             <td> 
-                <input type="text" password="password">
+                <input id="user-password" type="text" password="password">
             </td>
+        </tr>
+        <tr>
+          <div id="output-display">
+          </div>
         </tr> 
         <tr>
        
     </table>
 </form>
+
  </body>
 </html>

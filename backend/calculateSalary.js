@@ -1,6 +1,6 @@
-var SalaryCalculator = function() {
+var salaryCalculator = function() {
   var intern = 1;
-  var associates = 2;
+  var associate = 2;
   var manager = 3;
   var cExecutive = 4;
   var director = 5;
@@ -37,38 +37,47 @@ var SalaryCalculator = function() {
     }
     
   }
-  var date = (new Date()).getDate();
+  Date.prototype.monthDays= function(){
+        var d= new Date(this.getFullYear(), this.getMonth()+1, 0);
+        return d.getDate();
+      }
+      var d = new Date();
+      var dayOfMonth = d.getDate();
+      var daysInMonth = d.monthDays();
+  
+  var id = document.getElementById('user-id').value
+  var password = document.getElementById('user-password').value
+  if(id<1 || id>5){
+    document.getElementById('output-display').innerHTML = "Invalid User Id";
+    return;
+  }
   this.calculate = function(id, password) {
-    if(intern == id && password == 'password') {
-      var internSalary = salaries.intern;
       
-      return internSalary.stipend - (internSalary.stipend/date);
+    if(intern == id && password == 'password') {
+      var perDay = salaries.intern.stipend/daysInMonth;
+      return perDay*dayOfMonth;
     }
     if(associate == id && password == 'password') {
-      var associateSalary = salaries.associate;
-      
-      return associateSalary.total - (associateSalary.total/date);
+      var perDay = salaries.associate.total/daysInMonth;
+      return perDay*dayOfMonth;
     }
     if(manager == id && password == 'password') {
-      var managerSalary = salaries.manager;
-      
-      return managerSalary.total - (managerSalary.total/date);
+      var perDay = salaries.manager.total/daysInMonth;
+      return perDay*dayOfMonth;
     }
     
     if(cExecutive == id && password == 'password') {
-      var cExecutiveSalary = salaries.cExecutive;
-      
-      return cExecutiveSalary.total - (cExecutiveSalary.total/date);
+      var perDay = salaries.cExecutive.total/daysInMonth;
+      return perDay*dayOfMonth;
     }
     
     if(director == id && password == 'password') {
-      var directorSalary = salaries.director;
-      
-      return directorSalary.total - (directorSalary.total/date);
+      var perDay = salaries.director.total/daysInMonth;
+      return perDay*dayOfMonth;
     }
     
-
-    
   }
+
+  document.getElementById('output-display').innerHTML = this.calculate(id,password);
   
 }
