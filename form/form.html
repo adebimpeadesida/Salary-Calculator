@@ -4,44 +4,40 @@
     <title> fornt-end</title>
     <script src="../backend/calculateSalary.js">
     </script>
+    <link rel="stylesheet" href="style.css"> 
   </head>
-  <body>
-   <tr>
-    <div>
-      <section>
-<form>
-  <br>
-  <center>
-    <table>
-        <tr>
-            <td>User-id</td> 
-            <td>password</td>
-        </tr>
-        <br>
-        <center>
-          <br>
-        <center>
-          <br>
-        <center>
-          <br>
-        <center>
-          <input type="button" onClick="salaryCalculator()" value="Calculate">
-        <tr>
-            <td>
-                <input id="user-id" type="text" name="Use-id">
-            </td> 
-            <td> 
-                <input id="user-password" type="text" password="password">
-            </td>
-        </tr>
-        <tr>
-          <div id="output-display">
-          </div>
-        </tr> 
-        <tr>
-       
-    </table>
-</form>
-
- </body>
+    <body>
+      <div id= "header">
+        <h1>Salary calculator<h1>
+      </div> 
+      <div >
+        <section>
+          <form>
+            <center>
+              <table>
+                <tr>
+                  <td>User-id</td> 
+                  <td>password</td>
+                </tr>
+                <br>
+               <center>
+                 <input type="button" onClick="salaryCalculator()" value="Calculate">
+                  <tr>
+                    <td>
+                      <input id="user-id" type="text" name="Use-id">
+                    </td> 
+                    <td> 
+                      <input id="user-password" type="text" password="password">
+                  </td>
+                  </tr>
+                  <tr>
+                    <div id="output-display">
+                    </div>
+                 </tr> 
+                <tr>
+         
+              </table>
+          </form>
+      </div>
+    </body> 
 </html>
